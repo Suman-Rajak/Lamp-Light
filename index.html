@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .hero{
+            background: #1d2026;
+            min-height: 100vh;
+            width: 100%;
+            color: #FFF;
+            position: relative;
+        }
+        nav{
+            /* display: flex;
+            align-items:center ;
+            justify-content:center; */
+            left: 0;
+        }
+        /* Button */
+        button{
+            background: #efefef;
+            height: 30px;
+            width: 60px;
+            border-radius: 20px;
+            border: 0;
+            outline: 0;
+            cursor: pointer;
+            margin-top: 2rem;
+            transition: .5s;
+        }
+        /* Circle inside the button */
+        button span{
+            display: block;
+            height: 26px;
+            width: 26px;
+            border-radius: 50%;
+            background: #999;
+            margin-left: 2px;
+            transition: .5s;
+        }
+        .lamp-container{
+            /* display: flex; */
+            /* flex-direction: column; */
+            position: absolute;
+            top: -20px;
+            left:38%;
+            width: 200px;
+        }
+        .lamp{
+            width: 100%;
+        }
+        .light{
+            position: absolute;
+            top: 97%;
+            left: 46%;
+            transform: translateX(-50%);
+            width: 700px;
+            opacity: 0; 
+            /* Temporarily hide the light */
+
+            transition: opacity .5s;
+        }
+        .active{
+            background: green;
+        }
+        .active span{
+            background:white;
+            margin-left: 31px;
+        }
+        .on{
+            opacity: 100%;
+        }
+       
+        /* Responsive */
+        /* @media screen and (max-width:950px) {
+            .lamp{
+               width: 90%;
+            }
+            .light{
+                width: 570px;
+                left: 41%;
+            }
+        }
+
+        @media screen and (max-width:877px) {
+            .lamp{
+               width: 87%;
+            }
+            .light{
+                width: 550px;
+                left: 39%;
+            }
+        } */
+
+        @media screen and (max-width:710px) {
+
+            .lamp{
+                width: 85%;
+            }
+            .light{
+                width: 570px;
+                left: 39%;
+            }
+        }
+        @media screen and (max-width:585px) {
+            .lamp{
+                width: 80%;
+            }
+            .light{
+                width: 550px;
+                left: 36.5%;
+            }
+        }
+        @media screen and (max-width:558px) {
+            .lamp{
+                width: 75%;
+            }
+            .light{
+                width: 520px;
+                left: 34%;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <nav>
+            <!-- Button -->
+            <button type="submit" onclick="togglebtn()" id="btn"> 
+                <!-- Circle inside the button -->
+                <span>
+
+                </span>
+            </button>
+        </nav>
+
+        <!-- Lamp -->
+        <div class="lamp-container">
+            <img src="/images/lamp.png" class="lamp" alt="">
+            <img src="/images/light.png" class="light" alt="" id="light">
+        </div>
+    </div>
+
+
+
+    <script>
+        var btn = document.getElementById("btn");
+        var light = document.getElementById("light")
+
+        function togglebtn(){
+            btn.classList.toggle("active"); //Executing the class "active".
+            light.classList.toggle("on"); //Executing the class "on".
+        }
+    </script>
+</body>
+</html>
